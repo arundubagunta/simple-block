@@ -1,0 +1,39 @@
+<h3>Farmer</h3>
+
+<form (submit)="addFarmerEntry()">
+
+        <div class="row">
+            <div class="col-3">ID </div>
+            <div class="col-9"><input type="text" class="form-control" id="name" required [(ngModel)]="id" name="id">
+            </div>
+        </div>
+        <div  class="row">
+            <div class="col-3"> Name </div>
+            <div class="col-9"><input type="text" class="form-control" id="name" required [(ngModel)]="name"
+                    name="name"></div>
+        </div>
+        <div  class="row">
+            <div class="col-3"> Product Code </div>
+            <div class="col-9"><input type="text" class="form-control" id="name" required [(ngModel)]="prodCd"
+                    name="prodCd"></div>
+        </div>
+        <div  class="row">
+            <div class="col-3"> Batch No </div>
+            <div class="col-9"><input type="text" class="form-control" id="name" required [(ngModel)]="batchNo"
+                    name="farmType"></div>
+        </div>
+        <div  class="row">
+            <div class="col-3"> Location </div>
+            <div class="col-9"><input type="text" class="form-control" id="name" required [(ngModel)]="location"
+                    name="namlocatione"></div>
+        </div>
+        <div  class="row">
+            <div class="col-3"> Farm Type </div>
+            <div class="col-9"><input type="text" class="form-control" id="name" required [(ngModel)]="farmType"
+                    name="farmType"></div>
+        </div>
+        <div class="button-container">
+            <button type="reset"> Clear </button>
+            <button type="submit" class="primary"> Submit</button>
+        </div>
+</form>

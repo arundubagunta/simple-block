@@ -1,0 +1,54 @@
+<h3>Warehouse</h3>
+<form (submit)="onSubmit()">
+
+    <div class="row">
+        <div class="col-3">ID </div>
+        <div class="col-9"><input type="text" class="form-control" id="id" required [(ngModel)]="id" name="id">
+        </div>
+    </div>
+    <div  class="row">
+        <div class="col-3"> Name </div>
+        <div class="col-9"><input type="text" class="form-control" id="name" required [(ngModel)]="name"
+                name="name"></div>
+    </div>
+    <div  class="row">
+        <div class="col-3"> Product Code </div>
+        <div class="col-9"><input type="text" class="form-control" id="prodCd" required [(ngModel)]="prodCd"
+                name="prodCd"></div>
+    </div>
+    <div  class="row">
+        <div class="col-3"> Batch No </div>
+        <div class="col-9"><input type="text" class="form-control" id="batchNo" required [(ngModel)]="batchNo"
+                name="farmType"></div>
+    </div>
+    <div  class="row">
+        <div class="col-3"> Location </div>
+        <div class="col-9"><input type="text" class="form-control" id="location" required [(ngModel)]="location"
+                name="location"></div>
+    </div>
+    <div  class="row">
+        <div class="col-3"> Shelf Id </div>
+        <div class="col-9"><input type="text" class="form-control" id="shelfId" required [(ngModel)]="shelfId"
+                name="shelfId"></div>
+    </div>
+    <div  class="row">
+        <div class="col-3"> Source Id (Farm Id) </div>
+        <div class="col-9"><input type="text" class="form-control" id="sourceId" required [(ngModel)]="sourceId"
+                name="sourceId"></div>
+    </div>
+    <div  class="row">
+        <div class="col-3">  Destination </div>
+        <div class="col-9"><input type="text" class="form-control" id="destination" required [(ngModel)]="destination"
+                name="destination"></div>
+    </div>
+    <div  class="row">
+        <div class="col-3">  Entry Type </div>
+        <div class="col-9"><input type="text" class="form-control" id="entryType" required [(ngModel)]="entryType"
+                name="entryType"></div>
+    </div>
+   
+    <div class="button-container">
+        <button type="reset"> Clear </button>
+        <button type="submit" class="primary"> Submit</button>
+    </div>
+</form>
