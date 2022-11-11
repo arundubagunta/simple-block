@@ -33,5 +33,33 @@ span.data {
 }
 
 .even {
-    background-color: gray;
+    span {
+        display: block;
+    }
+    padding: 20px;
+    background-color: rgb(34, 34, 34);;
+    .hash {
+        color: #b79967;
+        font-weight: 700;
+    }
+    .prev-hash {
+        color: rgb(170, 197, 225);
+        font-weight: 700;
+    }
+}
+
+.odd {
+    span {
+        display: block;
+    }
+    padding: 20px;
+    background-color: rgb(55, 33, 33);
+    .hash {
+        color: rgb(170, 197, 225);
+        font-weight: 700;
+    }
+    .prev-hash {
+        color: #b79967;
+        font-weight: 700;
+    }
 }

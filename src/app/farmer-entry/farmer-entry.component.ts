@@ -17,6 +17,7 @@ export class FarmerEntryComponent implements OnInit {
   location = '';
   batchNo = '';
   farmType = 'REGULAR';
+  quantity = 0;
 
 
   ngOnInit(): void {

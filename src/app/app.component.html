@@ -36,20 +36,22 @@
   </div>
   <div class="col-6">
     <h4 *ngIf="blocks?.length">Blockchain Entries</h4>
-    <div *ngFor="let block of blocks; let i=index;" [class]="i % 2?'odd' : 'even'">
+    <div class="scroll">
+      <div *ngFor="let block of blocks; let i=index;" [class]="i % 2?'odd ' : 'even'">
 
-      <span>{{block.blockid}} </span>
+        <span>{{block.blockid}} </span>
 
-      <span>{{block.blockhash}}</span>
+        <span class="hash">{{block.blockhash}}</span>
 
-      <span> {{block.prevHash}}</span>
+        <span class="prev-hash"> {{block.prevHash}}</span>
 
-      <span> {{block.timestamp | date: 'medium'}}</span>
+        <span> {{block.timestamp | date: 'medium'}}</span>
 
-      <br>
+        <span class="data"> {{jsonString(block.data)}}</span>
 
-      <span class="data"> {{jsonString(block.data)}}</span>
+        <span class="data" *ngIf="block.data2"> {{jsonString(block.data2)}}</span>
 
+      </div>
     </div>
   </div>
 </div>

@@ -20,27 +20,10 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.blocks = this.blockChainService.chain.slice().reverse();
     this.blockChainService.blocks$.subscribe(blocks => {
-      this.blocks = blocks;
+      this.blocks = blocks.slice().reverse();
     })
-  }
-
-  addTransportEntry(entryType: string) {
-    const transport = {id: 't1', name: 'UPS', driverId: 'DL2345', vehicleId: 'V442', destination: 'Dallas, TX', entryType: entryType} as Transport;
-    this.blockChainService.addBlock(transport); // first transaction
-    this.blocks = this.blockChainService.chain;
-  }
-
-  addWarehouseEntry(entryType: string) {
-    const warehouse = {id: 'w1', name: 'Amazon Warehouse', location: 'Dallas, TX', entryType: entryType, shelfId: 'SW32'} as Warehouse;
-    this.blockChainService.addBlock(warehouse); // first transaction
-    this.blocks = this.blockChainService.chain;
-  }
-
-  addStoreEntry() {
-    const store = {id: 's1', name: 'Walmart', location: 'Dallas, TX', aisleId: 'A24'} as Store;
-    this.blockChainService.addBlock(store); // first transaction
-    this.blocks = this.blockChainService.chain;
   }
 
   jsonString(data: any){

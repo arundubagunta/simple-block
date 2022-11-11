@@ -4,7 +4,14 @@
 <form (submit)="onSubmit()">
 
     <div class="row">
-        <div class="col-3">ID </div>
+        <div class="col-3">Product </div>
+        <div class="col-9"><select type="text" class="form-control" id="id" required [(ngModel)]="prodHash" name="prodHash">
+                <option *ngFor = 'let item of prodBlocks' [value]="item.blockhash">{{item.farmerId}} - {{item.prodCd}} - {{item.timestamp | date: 'medium'}}</option> 
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">Store ID </div>
         <div class="col-9"><input type="text" class="form-control" id="id" required [(ngModel)]="id" name="id">
         </div>
     </div>
@@ -12,11 +19,6 @@
         <div class="col-3"> Name </div>
         <div class="col-9"><input type="text" class="form-control" id="name" required [(ngModel)]="name"
                 name="name"></div>
-    </div>
-    <div  class="row">
-        <div class="col-3"> Product Code </div>
-        <div class="col-9"><input type="text" class="form-control" id="prodCd" required [(ngModel)]="prodCd"
-                name="prodCd"></div>
     </div>
     <div  class="row">
         <div class="col-3"> Price </div>
@@ -38,18 +40,9 @@
         <div class="col-9"><input type="text" class="form-control" id="aisleId" required [(ngModel)]="aisleId"
                 name="aisleId"></div>
     </div>
+
     <div  class="row">
-        <div class="col-3"> Source Id (Farm Id) </div>
-        <div class="col-9"><input type="text" class="form-control" id="sourceId" required [(ngModel)]="sourceId"
-                name="sourceId"></div>
-    </div>
-    <div  class="row">
-        <div class="col-3">  Destination </div>
-        <div class="col-9"><input type="text" class="form-control" id="destination" required [(ngModel)]="destination"
-                name="destination"></div>
-    </div>
-    <div  class="row">
-        <div class="col-3">  Entry Type </div>
+        <div class="col-3"> Instore Location </div>
         <div class="col-9"><input type="text" class="form-control" id="entryType" required [(ngModel)]="entryType"
                 name="entryType"></div>
     </div>

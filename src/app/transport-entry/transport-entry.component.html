@@ -4,7 +4,15 @@
 <form (submit)="onSubmit()">
 
     <div class="row">
-        <div class="col-3">ID </div>
+        <div class="col-3">Product </div>
+        <div class="col-9"><select type="text" class="form-control" id="id" required [(ngModel)]="prodHash" name="prodHash">
+                <option *ngFor = 'let item of prodBlocks' [value]="item.blockhash">{{item.farmerId}} - {{item.prodCd}} - {{item.timestamp | date: 'medium'}}</option> 
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">Tranport Agency ID </div>
         <div class="col-9"><input type="text" class="form-control" id="id" required [(ngModel)]="id" name="id">
         </div>
     </div>
@@ -14,17 +22,7 @@
                 name="name"></div>
     </div>
     <div  class="row">
-        <div class="col-3"> Product Code </div>
-        <div class="col-9"><input type="text" class="form-control" id="prodCd" required [(ngModel)]="prodCd"
-                name="prodCd"></div>
-    </div>
-    <div  class="row">
-        <div class="col-3"> Batch No </div>
-        <div class="col-9"><input type="text" class="form-control" id="batchNo" required [(ngModel)]="batchNo"
-                name="farmType"></div>
-    </div>
-    <div  class="row">
-        <div class="col-3"> Location </div>
+        <div class="col-3"> Pick up Location </div>
         <div class="col-9"><input type="text" class="form-control" id="location" required [(ngModel)]="location"
                 name="location"></div>
     </div>
@@ -39,19 +37,17 @@
                 name="driverId"></div>
     </div>
     <div  class="row">
-        <div class="col-3"> Source Id (Farm Id) </div>
-        <div class="col-9"><input type="text" class="form-control" id="sourceId" required [(ngModel)]="sourceId"
-                name="sourceId"></div>
-    </div>
-    <div  class="row">
-        <div class="col-3">  Destination </div>
+        <div class="col-3">Drop Off Location </div>
         <div class="col-9"><input type="text" class="form-control" id="destination" required [(ngModel)]="destination"
                 name="destination"></div>
     </div>
     <div  class="row">
-        <div class="col-3">  Entry Type </div>
-        <div class="col-9"><input type="text" class="form-control" id="entryType" required [(ngModel)]="entryType"
-                name="entryType"></div>
+        <div class="col-3">  Record Type </div>
+        <div class="col-9"><select type="text" class="form-control" id="entryType" required [(ngModel)]="entryType"
+                name="entryType">
+                <option>PICK UP</option>
+                <option>DROP OFF</option>
+            </select></div>
     </div>
    
     <div class="button-container">

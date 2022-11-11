@@ -3,8 +3,8 @@
 <form (submit)="addFarmerEntry()">
 
         <div class="row">
-            <div class="col-3">ID </div>
-            <div class="col-9"><input type="text" class="form-control" id="name" required [(ngModel)]="id" name="id">
+            <div class="col-3">Farmer ID </div>
+            <div class="col-9"><input type="text" class="form-control" id="id" required [(ngModel)]="id" name="id">
             </div>
         </div>
         <div  class="row">
@@ -14,23 +14,32 @@
         </div>
         <div  class="row">
             <div class="col-3"> Product Code </div>
-            <div class="col-9"><input type="text" class="form-control" id="name" required [(ngModel)]="prodCd"
+            <div class="col-9"><input type="text" class="form-control" id="prodCd" required [(ngModel)]="prodCd"
                     name="prodCd"></div>
         </div>
         <div  class="row">
             <div class="col-3"> Batch No </div>
-            <div class="col-9"><input type="text" class="form-control" id="name" required [(ngModel)]="batchNo"
-                    name="farmType"></div>
+            <div class="col-9"><input type="text" class="form-control" id="batchNo"  [(ngModel)]="batchNo"
+                    name="batchNo"></div>
         </div>
         <div  class="row">
-            <div class="col-3"> Location </div>
-            <div class="col-9"><input type="text" class="form-control" id="name" required [(ngModel)]="location"
+            <div class="col-3"> Quantity </div>
+            <div class="col-9"><input type="text" class="form-control" id="quantity" required [(ngModel)]="quantity"
+                    name="quantity"></div>
+        </div>
+        <div  class="row">
+            <div class="col-3"> Address </div>
+            <div class="col-9"><input type="text" class="form-control" id="location" required [(ngModel)]="location"
                     name="namlocatione"></div>
         </div>
         <div  class="row">
             <div class="col-3"> Farm Type </div>
-            <div class="col-9"><input type="text" class="form-control" id="name" required [(ngModel)]="farmType"
-                    name="farmType"></div>
+            <div class="col-9"><select type="text" class="form-control" id="farmType" required [(ngModel)]="farmType"
+                    name="farmType">
+                    <option>REGULAR</option>
+                    <option>ORGANIC</option>
+                    <option>CERTIFIED</option>
+                </select></div>
         </div>
         <div class="button-container">
             <button type="reset"> Clear </button>

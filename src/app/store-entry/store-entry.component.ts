@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProdBlock } from '../model/block.model';
 import { Store } from '../model/store.model';
 import { BlockChainService } from '../service/block-chain.service';
 
@@ -23,12 +24,14 @@ export class StoreEntryComponent implements OnInit {
   entryType = '';
   aisleId = '';
   price = 0;
+  prodHash = '';
+  prodBlocks: ProdBlock[] = [];
 
   ngOnInit(): void {
+    this.prodBlocks = this.blockChainService.prodChain;
   }
-
   onSubmit() {
-    const warehouse = {id: this.id, name: this.name, productCode: this.prodCd, location: this.location, batchNo: this.batchNo, sourceId: this.sourceId, entryType: this.entryType, aisleId: this.aisleId, price: this.price } as Store;
+    const warehouse = {id: this.id, name: this.name, productCode: this.prodCd, location: this.location, batchNo: this.batchNo, sourceId: this.sourceId, entryType: this.entryType, aisleId: this.aisleId, price: this.price, prodHash: this.prodHash } as Store;
     this.blockChainService.addBlock(warehouse); 
   }
 

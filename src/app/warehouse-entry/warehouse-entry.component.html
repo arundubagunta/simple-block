@@ -2,7 +2,15 @@
 <form (submit)="onSubmit()">
 
     <div class="row">
-        <div class="col-3">ID </div>
+        <div class="col-3">Product </div>
+        <div class="col-9"><select type="text" class="form-control" id="id" required [(ngModel)]="prodHash" name="prodHash">
+                <option *ngFor = 'let item of prodBlocks' [value]="item.blockhash">{{item.farmerId}} - {{item.prodCd}} - {{item.timestamp | date: 'medium'}}</option> 
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">Warehouse ID </div>
         <div class="col-9"><input type="text" class="form-control" id="id" required [(ngModel)]="id" name="id">
         </div>
     </div>
@@ -22,7 +30,7 @@
                 name="farmType"></div>
     </div>
     <div  class="row">
-        <div class="col-3"> Location </div>
+        <div class="col-3"> Address </div>
         <div class="col-9"><input type="text" class="form-control" id="location" required [(ngModel)]="location"
                 name="location"></div>
     </div>
@@ -37,14 +45,17 @@
                 name="sourceId"></div>
     </div>
     <div  class="row">
-        <div class="col-3">  Destination </div>
+        <div class="col-3">  Carrier </div>
         <div class="col-9"><input type="text" class="form-control" id="destination" required [(ngModel)]="destination"
                 name="destination"></div>
     </div>
     <div  class="row">
         <div class="col-3">  Entry Type </div>
-        <div class="col-9"><input type="text" class="form-control" id="entryType" required [(ngModel)]="entryType"
-                name="entryType"></div>
+        <div class="col-9"><select type="text" class="form-control" id="entryType" required [(ngModel)]="entryType"
+            name="entryType">
+            <option>INTAKE</option>
+            <option>DISPATCH</option>
+        </select></div>
     </div>
    
     <div class="button-container">
